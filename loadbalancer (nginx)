@@ -1,0 +1,32 @@
+# we can use load balancer for balancinf request from wazuh agents to wazuh servers
+# this mothod gives us the possibility to detect which wazuh server if down/disconnect to isolate that server  from operationally
+#
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+
+events {
+      worker_connection 768;
+      #multi_accept on;
+}
+stram {
+  upstream master {
+      server x.x.x.x;1515;
+  }
+  upstream mycluster {
+      hash $remote_addr consistent;
+          server x.x.x.x:1514;
+          server x.x.x.x:1514;
+  }
+server {
+    listen 1515;
+    proxy_pass master;
+}
+server {
+    listen 1514;
+    proxy_pass mycluster;
+}
+}
+
