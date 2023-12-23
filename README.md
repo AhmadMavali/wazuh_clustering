@@ -1,4 +1,4 @@
-Wazuh clustering with loadbalancer
+Wazuh clustering with a loadbalancer
 
 
 
