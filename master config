@@ -1,0 +1,16 @@
+this configuration for master node of wazuh clustering 
+
+
+<cluster>
+    <name>wazuh</name>  $ name of cluster must be same with workers
+    <node_name>master</node_name> # specific name for this node
+    <node_type>master</node_type>  # type of node can be Master or Worker
+    <key>dcb855c9f2e8afb29fd93b8c7812f327</key>  Authentication key for clustering, must be same with other node (using this command to generate key   "openssl rand -hex 16" )
+    <port>1516</port> # using default port
+    <bind_addr>192.168.127.227</bind_addr>  # itself ip address
+    <nodes>
+        <node>192.168.127.227</node> # itself ip address
+    </nodes>
+    <hidden>no</hidden>  # set no for visible 
+    <disabled>no</disabled> # set no for enable 
+</cluster>
