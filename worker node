@@ -1,0 +1,15 @@
+# this config using for worker node
+
+<cluster>
+    <name>wazuh</name> # cluster name must be same with master node
+    <node_name>worker1</node_name> # worker name must be specific
+    <node_type>worker</node_type> # typ of node can be master or worker 
+    <key>dcb855c9f2e8afb29fd93b8c7812f327</key>  #key of clustering authentication
+    <port>1516</port> # default port
+    <bind_addr>192.168.127.131</bind_addr> #itself ip address 
+    <nodes>
+        <node>192.168.127.227</node>  # master node ip 
+    </nodes>
+    <hidden>no</hidden> # set no for visible
+    <disabled>no</disabled>  # set no for enable
+</cluster>
